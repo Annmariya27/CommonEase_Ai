@@ -1,0 +1,83 @@
+{
+  "name": "Document",
+  "type": "object",
+  "properties": {
+    "title": {
+      "type": "string",
+      "description": "Document title or filename"
+    },
+    "category": {
+      "type": "string",
+      "enum": [
+        "legal",
+        "medical",
+        "government",
+        "financial",
+        "employment",
+        "academic"
+      ],
+      "description": "Document category"
+    },
+    "file_url": {
+      "type": "string",
+      "description": "URL to the uploaded document"
+    },
+    "original_text": {
+      "type": "string",
+      "description": "Extracted text from document"
+    },
+    "simplified_summary": {
+      "type": "string",
+      "description": "AI-generated simplified summary"
+    },
+    "key_points": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "description": "Key bullet points from analysis"
+    },
+    "language": {
+      "type": "string",
+      "enum": [
+        "english",
+        "hindi",
+        "tamil",
+        "bengali",
+        "malayalam"
+      ],
+      "default": "english",
+      "description": "Language for summary"
+    },
+    "processing_status": {
+      "type": "string",
+      "enum": [
+        "processing",
+        "completed",
+        "failed"
+      ],
+      "default": "processing",
+      "description": "Document processing status"
+    },
+    "file_type": {
+      "type": "string",
+      "description": "Original file type (pdf, jpg, png, etc.)"
+    },
+    "medical_severity": {
+      "type": "string",
+      "description": "For medical docs, AI assessment of severity (e.g., '75% - High')"
+    },
+    "legal_rights_summary": {
+      "type": "string",
+      "description": "For legal docs, a summary of applicable rights and laws"
+    },
+    "suggested_next_steps": {
+      "type": "string",
+      "description": "AI-suggested next actions for the user"
+    }
+  },
+  "required": [
+    "title",
+    "category"
+  ]
+}

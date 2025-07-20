@@ -1,0 +1,48 @@
+{
+  "name": "Conversation",
+  "type": "object",
+  "properties": {
+    "document_id": {
+      "type": "string",
+      "description": "Reference to the document being discussed"
+    },
+    "messages": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "role": {
+            "type": "string",
+            "enum": [
+              "user",
+              "assistant"
+            ]
+          },
+          "content": {
+            "type": "string"
+          },
+          "timestamp": {
+            "type": "string",
+            "format": "date-time"
+          }
+        }
+      },
+      "description": "Chat messages about the document"
+    },
+    "language": {
+      "type": "string",
+      "enum": [
+        "english",
+        "hindi",
+        "tamil",
+        "bengali",
+        "malayalam"
+      ],
+      "default": "english"
+    }
+  },
+  "required": [
+    "document_id",
+    "messages"
+  ]
+}
